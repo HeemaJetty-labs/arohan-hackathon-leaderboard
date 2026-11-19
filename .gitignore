@@ -1,0 +1,15 @@
+**pycache**/
+*.pyc
+.env
+.vscode/
+
+uploads/*/*/*
+!uploads/.gitkeep
+
+*.log
+.DS_Store
+arohan-eb.zip
+AROHAN.zip
+scores_old.xlsx
+scores-orig.xlsx
+README_orig.md

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arohan</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+    <header class="header">
+
+        <div>
+            <p id="arohan-logo">🚀 Arohan</p>
+            <h1>Flash App Development Challenge</h1>
+        </div>
+
+        <div class="timer">
+            <span id="timer">
+            02:00:00
+        </span>
+        <span id="timer-status">
+            ⚪ NOT STARTED
+        </span>
+        </div>
+
+    </header>
+
+    <!-- =========================
+     Organizer Control Panel
+========================= -->
+
+<div id="organizerModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>🔒 Organizer Control Panel</h2>
+
+        <p>Enter Organizer Launch Code</p>
+
+        <div class="password-container">
+
+            <input
+                type="password"
+                id="launch-code"
+                placeholder="Enter Launch Code"
+            >
+
+            <button id="eyeBtn" onclick="togglePassword()">
+                👁
+            </button>
+
+        </div>
+
+        <div class="organizer-buttons">
+
+            <button class="start-btn" onclick="startChallenge()">
+                🚀 Start Challenge
+            </button>
+
+            <button class="pause-btn" onclick="pauseChallenge()">
+                ⏸ Pause
+            </button>
+
+            <button class="resume-btn" onclick="resumeChallenge()">
+                ▶ Resume
+            </button>
+                        <button class="end-btn" onclick="endChallenge()">
+                ⛔ End Challenge
+            </button>
+            <button class="close-btn" onclick="closeOrganizerPanel()">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Navigation -->
+    <nav class="tabs">
+
+        <button class="tab active" onclick="showTab('challenge')">
+            🚀 Challenge
+        </button>
+
+        <button class="tab" onclick="showTab('leaderboard')">
+            🏆 Leaderboard
+        </button>
+
+        <button class="tab" onclick="showTab('participants')">
+            👥 Participants
+        </button>
+
+        <button class="tab" onclick="showTab('scores')">
+            📊 Score Board
+        </button>
+
+        <button class="tab" onclick="showTab('submissions')">
+            📦 Submissions
+        </button>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- Challenge -->
+        <section id="challenge" class="tab-content active">
+
+    <div class="hero challenge-hero">
+
+        <div
+            id="challenge-hero-status"
+            class="challenge-status-pill upcoming"
+        >
+            ⚪ UPCOMING
+        </div>
+
+        <div class="hero-eyebrow">
+            🚀 AROHAN 2026
+        </div>
+
+        <h2>FLASH APP DEVELOPMENT CHALLENGE</h2>
+
+        <p class="tagline">
+            Build. Compete. Climb.
+        </p>
+
+        <p class="hero-subtitle">
+            Turn an idea into a working application before the clock runs out.
+        </p>
+
+        <div class="challenge-info challenge-stat-grid">
+
+            <div class="challenge-stat">
+                <div class="stat-icon">📅</div>
+                <div>
+                    <span class="stat-label">EVENT</span>
+                    <strong>September 2026</strong>
+                </div>
+            </div>
+
+            <div class="challenge-stat">
+                <div class="stat-icon">⏱️</div>
+                <div>
+                    <span class="stat-label">DURATION</span>
+                    <strong>2 Hours</strong>
+                </div>
+            </div>
+
+            <div class="challenge-stat">
+                <div class="stat-icon">👥</div>
+                <div>
+                    <span class="stat-label">TEAMS</span>
+                    <strong>{{ team_count }} Teams</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="challenge-details-grid">
+
+        <div class="card challenge-card">
+
+            <div class="section-heading">
+                <span class="section-icon">⚡</span>
+                <div>
+                    <h3>The Challenge</h3>
+                    <p>
+                        Build and deploy a useful application within the
+                        two-hour challenge window.
+                    </p>
+                </div>
+            </div>
+
+            <div class="challenge-divider"></div>
+
+            <h3>🏁 Challenge Rules</h3>
+
+            <div class="rules-grid">
+
+                <div class="rule-item">
+                    <span>✓</span>
+                    <p>Complete the application within 2 hours.</p>
+                </div>
+
+                <div class="rule-item">
+                    <span>✓</span>
+                    <p>Submit your project code as a ZIP file.</p>
+                </div>
+
+                <div class="rule-item">
+                    <span>✓</span>
+                    <p>Submit your documentation as a ZIP file.</p>
+                </div>
+
+                <div class="rule-item">
+                    <span>✓</span>
+                    <p>Submit your recorded demo as a ZIP file.</p>
+                </div>
+
+                <div class="rule-item">
+                    <span>✓</span>
+                    <p>Complete your demonstration before the deadline.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card topic-card">
+
+            <div class="topic-icon">
+                💡
+            </div>
+
+            <div>
+                <span class="topic-label">
+                    CHALLENGE TOPIC
+                </span>
+
+                <h3>Ready for the reveal?</h3>
+
+                <p>
+                    The challenge topic will be revealed in email.
+                </p>
+
+                <div class="topic-note">
+                    📩 Watch for the official topic announcement.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- Leaderboard -->
+        <section id="leaderboard" class="tab-content">
+
+            <h2>🏆 Leaderboard</h2>
+
+            <p class="live-message">
+                🔄 Scores will update automatically
+            </p>
+
+            <div id="leaderboard-data"></div>
+
+        </section>
+
+
+        <!-- Participants -->
+        <section id="participants" class="tab-content">
+
+            <h2>👥 Participants</h2>
+
+            <p>
+                {{ participant_count }} Participants •
+                {{ team_count }} Teams
+            </p>
+
+            <div class="table-container">
+
+                {{ participants_table | safe }}
+
+            </div>
+
+        </section>
+
+
+        <!-- Scores -->
+        <section id="scores" class="tab-content">
+
+        <h2>📊 Score Board</h2>
+
+        <p class="live-message">
+            🔄 Evaluator scores:
+        </p>
+
+        <div id="scoreboard-data"></div>
+
+    </section>
+
+
+    <!-- Submissions -->
+  <section id="submissions" class="tab-content">
+
+    <div class="section-header">
+        <h2>📦 Submission Tracker</h2>
+        <span id="submission-status-badge" class="live-submissions">
+            SUBMISSIONS CLOSED
+        </span>
+    </div>
+
+    <p class="live-message">
+        Upload the required artifacts before the challenge timer ends.
+    </p>
+
+    <div id="submission-data">
+        <!-- Cards will be generated here -->
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+
+<script src="/static/app.js"></script>
+
+
+</body>
+</html>

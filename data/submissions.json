@@ -1,0 +1,29 @@
+[
+  {
+    "team": "Runtime Terror",
+    "code": true,
+    "documentation": true,
+    "demo": true,
+    "code_uploaded_at": "07:32 PM",
+    "documentation_uploaded_at": "07:27 PM",
+    "demo_uploaded_at": "07:45 PM"
+  },
+  {
+    "team": "The Syntax Sorcerers",
+    "code": true,
+    "documentation": true,
+    "demo": false,
+    "code_uploaded_at": null,
+    "documentation_uploaded_at": "07:27 PM",
+    "demo_uploaded_at": null
+  },
+  {
+    "team": "Lone Warrior",
+    "code": false,
+    "documentation": false,
+    "demo": false,
+    "code_uploaded_at": null,
+    "documentation_uploaded_at": null,
+    "demo_uploaded_at": null
+  }
+]
